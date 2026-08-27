@@ -1,0 +1,12 @@
+model: /workspace/runs/yolo26s_3d_stares_25pct-2/weights/best.pt
+data: /workspace/data/dataset.yaml
+video: 1
+output: /workspace/evaluation/video1
+imgsz: 960
+# Prediction preprocessing at 960 px is memory-heavy; 16 is safe on 96 GB.
+batch: 16
+device: 0
+workers: 16
+conf: 0.25
+iou: 0.50
+max_annotated_images: 50

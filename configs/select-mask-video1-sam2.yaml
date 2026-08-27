@@ -1,0 +1,28 @@
+yolo_model: /workspace/runs/yolo26s_3d_stares_25pct-2/weights/best.pt
+visibility_csv: /workspace/evaluation/video1/per_frame_metrics.csv
+image_dir: /workspace/data/images
+video: 1
+classes: [loop, forceps]
+output: /workspace/selected_and_masked/video1_sam2_test
+
+# An image must pass every visibility threshold.
+min_brightness: 0.08
+min_contrast: 0.10
+min_sharpness: 25.0
+max_dark_density: 0.90
+
+# YOLO target detections must pass this confidence threshold.
+yolo_conf: 0.80
+yolo_iou: 0.70
+imgsz: 960
+batch: 16
+device: 0
+
+# Small first test with temporal diversity.
+max_images: 10
+min_frame_gap: 100
+
+# SAM 2.1 Hiera Large box-prompt settings.
+sam_checkpoint: /workspace/models/sam2.1_hiera_large.pt
+sam_model_config: configs/sam2.1/sam2.1_hiera_l.yaml
+sam_mask_threshold: 0.0

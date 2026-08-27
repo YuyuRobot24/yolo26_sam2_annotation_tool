@@ -1,0 +1,16 @@
+# YOLO26 training configuration for a downsampled 3D-STARES training set.
+model: yolo26s.pt
+data: /workspace/data/dataset-small.yaml
+epochs: 50
+imgsz: 960
+# Float values between 0 and 1 ask Ultralytics AutoBatch to target that
+# fraction of GPU VRAM. 0.80 leaves headroom for augmentation/memory spikes.
+batch: 0.80
+device: 0
+workers: 16
+amp: true
+project: /workspace/runs
+name: yolo26s_3d_stares_25pct
+seed: 42
+# Faster CUDA kernels; the data subset itself remains reproducible via seed.
+deterministic: false

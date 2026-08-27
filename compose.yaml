@@ -1,0 +1,17 @@
+services:
+  train:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 3d-stares-yolo26:torch2.9-cu128
+    ipc: host
+    shm_size: "16gb"
+    gpus: all
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      YOLO_CONFIG_DIR: /workspace/.config
+    command: bash
+    stdin_open: true
+    tty: true

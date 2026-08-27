@@ -1,0 +1,12 @@
+data/
+runs/
+evaluation/
+selected_and_masked/
+.tools/
+.config/
+.git/
+yolo26/.git/
+src/ultralytics/.git/
+src/sam2/.git/
+**/__pycache__/
+*.pt

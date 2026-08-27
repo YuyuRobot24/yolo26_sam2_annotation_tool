@@ -1,0 +1,13 @@
+data/
+runs/
+evaluation/
+selected_and_masked/
+label_examples/
+/src/
+/yolo26/
+/.tools/
+/.repo-git/
+.config/
+.cache/
+*.pt
+__pycache__/
